@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-image: radial-gradient(#EFC562, #F1B242, #F3A024 );
+}
+header{
+    height: 70px;
+    background-color: #ffffff2f;
+    box-shadow: 0 0.5px 8px 2px #00000036 ;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 2fr);
+    align-items: center;
+    padding-inline: 3%;
+    
+}
+
+.logo{
+
+}
+nav{
+    
+    
+}
+.menu_mob{
+    display: none;
+}
+nav  ul{
+    list-style: none;
+    display: flex;
+    gap: 10%;
+    padding: 2px;
+    
+}
+nav ul a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s, border 0.3s, background-color 0.3s; /* Ajoute la transition de bordure */
+    border: 1px solid transparent; /* Bordure transparente par défaut */
+    border-radius: 30px;
+    width: 100px; /* Largeur fixe */
+    height: 30px;
+    display: inline-block; /* Pour appliquer la largeur */
+    text-align: center; /* Centrer le texte */
+}
+nav ul li:hover{
+     background-color: rgba(220, 220, 220, 0.089);
+     border-radius: 30px;
+}
+
+nav ul a:hover {
+    border: 1px solid transparent; /* Bordure visible au hover */
+    background: linear-gradient(to right, rgb(187, 124, 15), rgb(87, 87, 38)); /* Dégradé linéaire du rouge à l'orange au jaune */
+    -webkit-background-clip: text; /* Pour le support des navigateurs WebKit */
+    background-clip: text;
+    color: transparent; /* Rendre le texte transparent pour voir le dégradé */
+    display: inline-block; /* S'assurer que le dégradé est appliqué au contenu du texte */
+}
+
+main{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+}
+.hero{
+    margin-top: 15px;
+    margin-inline: auto;
+    color: white;
+    font-size: 5vw;
+}
+
+span[class="Boul"]{
+   background: linear-gradient(35deg, white , rgb(59, 58, 58), rgb(255, 255, 255),rgb(59, 58, 58)); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent; 
+    }
+.bread_img{
+    position: absolute;
+    /* bottom: -50px; */
+    /* left: 30%; */
+    z-index:-444;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 40vw;      /* Largeur responsive */
+    max-width: 400px; /* Largeur max sur grands écrans */
+    z-index: 1;
+     /* animation: apparition puis rebond */
+    opacity: 0;
+    animation: appearBounce 1.5s cubic-bezier(.22,.9,.35,1) 0.2s both;
+
+}
+
+.bread_img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* keyframes apparition + rebond */
+@keyframes appearBounce {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px) scale(0.98);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-60px) scale(1.03);
+    }
+    75% {
+        transform: translateX(-50%) translateY(10px) scale(0.995);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(6) scale(1);
+    }
+}
+/* respect des préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .bread_img {
+        animation: none;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+footer{
+    display: flex;
+    height: 50px;
+    border: 1px solid black;
+    border-top:hidden ;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.096) ;
+    backdrop-filter: blur(10px);
+}
+@media screen and (max-width: 570px) {
+    nav {
+        display: none;
+    }
+    .menu_mob{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        justify-self: end;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        font-size: 10px;
+        color: white;
+        cursor: pointer;
+        position: relative;
+
+    }
+    .menu_mob span, .menu_mob span::before, .menu_mob span::after {
+        background: white;
+        width: 25px;
+        height: 4px;
+        border-radius: 2px;
+        position: absolute;
+         transition: all 0.3s ease-in-out;
+    }
+    .menu_mob span::before, .menu_mob span::after {
+        content: '';
+    }
+    .menu_mob span::before {
+        top: -8px;
+    }
+    .menu_mob span::after {
+        bottom: -8px;
+    }
+    :is(.menu_mob:active, .menu_mob:focus) .menu_mob span{
+        background: transparent;
+        }
+
+    :is(.menu_mob:active, .menu_mob:focus) .menu_mob span::before{
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+    :is(.menu_mob:active, .menu_mob:focus) .menu_mob span::after{
+            transform: rotate(-45deg);
+            bottom: 0;
+    }
+}
