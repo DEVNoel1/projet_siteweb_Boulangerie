@@ -99,7 +99,7 @@ span[class="Boul"]{
      /* animation: apparition puis rebond */
     opacity: 0;
     animation: appearBounce 1.5s cubic-bezier(.22,.9,.35,1) 0.2s both;
-
+    animation-delay: 1.1s;
 }
 
 .bread_img img {
