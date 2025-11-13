@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="" />
-    <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="description" content="">
     <title>Document</title>
-    <link rel="stylesheet" href="SRC/STYLES/style0.css" />
+    <link rel="stylesheet" href="SRC/STYLES/style0.css">
   </head>
   <body>
+
     <header>
-      <div class="logo"><a href="">LOGO</a></div>
-      <div class="menu_mob" role="button" tabindex="1">
-        <span></span>
+
+      <div class="logo">
+        <a href="">LOGO</a>
       </div>
+
+      <div class="menu_mob" role="button" tabindex="1">
+          <span></span>
+      </div>
+
       <nav>
         <ul>
           <li><a href="index.html">Accueil</a></li>
@@ -21,22 +27,19 @@
           <li><a href="SRC/PAGES/Contact.html">Contact</a></li>
         </ul>
       </nav>
+
     </header>
+
     <main>
       <h1 class="hero">votre <span class="Boul">Boulangrie</span></h1>
-      <br />
+      <br>
       <div class="bread_img">
-        <img src="./images/bread.png" alt="bread images" />
+        <img src="./images/bread.png" alt="bread images">
       </div>
     </main>
+
     <footer>© Tout droit reservé</footer>
+    
+    <script src="/SRC/SCRIPTS/index.js"></script>
   </body>
-  <script>
-    const btn = document.querySelector(".menu_mob");
-    const nav = document.querySelector("nav ul");
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("open");
-      nav.classList.toggle("open");
-    });
-  </script>
 </html>
